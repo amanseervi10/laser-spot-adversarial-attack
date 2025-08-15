@@ -1,0 +1,132 @@
+Analysis for Wavelength 480
+
+
+------------------------------------------------------------
+Num Dots: 2
+------------------------------------------------------------
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 719
+Attack Success Rate: 8.76%
+Time taken: 25.22 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 721
+Attack Success Rate: 8.50%
+Time taken: 25.42 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 718
+Attack Success Rate: 8.88%
+Time taken: 24.97 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 729
+Attack Success Rate: 7.49%
+Time taken: 25.03 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 738
+Attack Success Rate: 6.35%
+Time taken: 24.82 seconds
+
+Average ASR for 2 dots: 0.07994923857868022
+Time taken all iterations for 2 dots: 125.46 seconds
+
+------------------------------------------------------------
+Num Dots: 3
+------------------------------------------------------------
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 701
+Attack Success Rate: 11.04%
+Time taken: 24.83 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 702
+Attack Success Rate: 10.91%
+Time taken: 25.97 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 691
+Attack Success Rate: 12.31%
+Time taken: 24.73 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 717
+Attack Success Rate: 9.01%
+Time taken: 25.44 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 703
+Attack Success Rate: 10.79%
+Time taken: 24.63 seconds
+
+Average ASR for 3 dots: 0.10812182741116752
+Time taken all iterations for 3 dots: 125.60 seconds
+
+------------------------------------------------------------
+Num Dots: 4
+------------------------------------------------------------
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 686
+Attack Success Rate: 12.94%
+Time taken: 24.90 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 675
+Attack Success Rate: 14.34%
+Time taken: 25.01 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 651
+Attack Success Rate: 17.39%
+Time taken: 28.47 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 666
+Attack Success Rate: 15.48%
+Time taken: 27.75 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 678
+Attack Success Rate: 13.96%
+Time taken: 27.92 seconds
+
+Average ASR for 4 dots: 0.14822335025380712
+Time taken all iterations for 4 dots: 134.05 seconds
+
+------------------------------------------------------------
+Num Dots: 5
+------------------------------------------------------------
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 630
+Attack Success Rate: 20.05%
+Time taken: 28.63 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 647
+Attack Success Rate: 17.89%
+Time taken: 27.78 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 652
+Attack Success Rate: 17.26%
+Time taken: 28.26 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 639
+Attack Success Rate: 18.91%
+Time taken: 28.75 seconds
+
+Total pedestrians detected previously: 788
+Total pedestrians detected now : 671
+Attack Success Rate: 14.85%
+Time taken: 28.60 seconds
+
+Average ASR for 5 dots: 0.17791878172588832
+Time taken all iterations for 5 dots: 142.04 seconds
+
+Time taken for analysis across all iterations: 527.17 seconds

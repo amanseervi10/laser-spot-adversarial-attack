@@ -1,0 +1,108 @@
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+============================================================
+                     ATTACK PARAMETERS                      
+============================================================
+Model:               m
+Wavelength:          532 nm
+Number of Dots:      2
+Iterations:          5
+Restarts:            3
+Moves per Dot:       5
+Images Saved:        No
+Log file:            log_file_2.txt
+============================================================
+
+                    PERFORMANCE METRICS                     
+============================================================
+Total Time:                              3660.76 sec
+Attack Success Rate:                     48.34%
+Average Run Time:                        3.57 sec
+Average Time for Score 0:                0.70 sec
+Max Time for Score 0:                    6.15 sec
+Average Score when not 0:                0.668
+Average Time for non-zero Scores:        6.26 sec
+============================================================
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+============================================================
+                     ATTACK PARAMETERS                      
+============================================================
+Model:               m
+Wavelength:          532 nm
+Number of Dots:      3
+Iterations:          5
+Restarts:            3
+Moves per Dot:       5
+Images Saved:        No
+Log file:            log_file_3.txt
+============================================================
+
+                    PERFORMANCE METRICS                     
+============================================================
+Total Time:                              4457.55 sec
+Attack Success Rate:                     59.57%
+Average Run Time:                        4.35 sec
+Average Time for Score 0:                1.03 sec
+Max Time for Score 0:                    11.17 sec
+Average Score when not 0:                0.680
+Average Time for non-zero Scores:        9.25 sec
+============================================================
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+============================================================
+                     ATTACK PARAMETERS                      
+============================================================
+Model:               m
+Wavelength:          532 nm
+Number of Dots:      4
+Iterations:          5
+Restarts:            3
+Moves per Dot:       5
+Images Saved:        No
+Log file:            log_file_4.txt
+============================================================
+
+                    PERFORMANCE METRICS                     
+============================================================
+Total Time:                              5001.28 sec
+Attack Success Rate:                     65.14%
+Average Run Time:                        4.88 sec
+Average Time for Score 0:                1.02 sec
+Max Time for Score 0:                    11.62 sec
+Average Score when not 0:                0.663
+Average Time for non-zero Scores:        12.11 sec
+============================================================
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+============================================================
+                     ATTACK PARAMETERS                      
+============================================================
+Model:               m
+Wavelength:          532 nm
+Number of Dots:      5
+Iterations:          5
+Restarts:            3
+Moves per Dot:       5
+Images Saved:        No
+Log file:            log_file_5.txt
+============================================================
+
+                    PERFORMANCE METRICS                     
+============================================================
+Total Time:                              5294.00 sec
+Attack Success Rate:                     71.78%
+Average Run Time:                        5.17 sec
+Average Time for Score 0:                1.26 sec
+Max Time for Score 0:                    15.60 sec
+Average Score when not 0:                0.662
+Average Time for non-zero Scores:        15.10 sec
+============================================================
+

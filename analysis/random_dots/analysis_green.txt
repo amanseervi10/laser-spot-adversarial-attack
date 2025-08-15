@@ -1,0 +1,198 @@
+------------------------------------------------------------
+Num Dots: 1
+------------------------------------------------------------
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 664
+Attack Success Rate: 2.50%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 656
+Attack Success Rate: 3.67%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 641
+Attack Success Rate: 5.87%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 654
+Attack Success Rate: 3.96%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 648
+Attack Success Rate: 4.85%
+
+
+Average ASR for 1 dots: 0.04170337738619677
+
+------------------------------------------------------------
+Num Dots: 2
+------------------------------------------------------------
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 622
+Attack Success Rate: 8.66%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 623
+Attack Success Rate: 8.52%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 629
+Attack Success Rate: 7.64%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 630
+Attack Success Rate: 7.49%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 635
+Attack Success Rate: 6.75%
+
+
+Average ASR for 2 dots: 0.07812041116005872
+------------------------------------------------------------
+Num Dots: 3
+------------------------------------------------------------
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 635
+Attack Success Rate: 6.75%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 610
+Attack Success Rate: 10.43%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 609
+Attack Success Rate: 10.57%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 623
+Attack Success Rate: 8.52%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 619
+Attack Success Rate: 9.10%
+
+
+Average ASR for 3 dots: 0.0907488986784141
+------------------------------------------------------------
+Num Dots: 4
+------------------------------------------------------------
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 586
+Attack Success Rate: 13.95%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 582
+Attack Success Rate: 14.54%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 576
+Attack Success Rate: 15.42%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 597
+Attack Success Rate: 12.33%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 607
+Attack Success Rate: 10.87%
+
+
+Average ASR for 4 dots: 0.13421439060205578
+------------------------------------------------------------
+Num Dots: 5
+------------------------------------------------------------
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 553
+Attack Success Rate: 18.80%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 567
+Attack Success Rate: 16.74%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 552
+Attack Success Rate: 18.94%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 558
+Attack Success Rate: 18.06%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 587
+Attack Success Rate: 13.80%
+
+
+Average ASR for 5 dots: 0.1726872246696035
+------------------------------------------------------------
+Num Dots: 2
+------------------------------------------------------------
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 623
+Attack Success Rate: 8.52%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 636
+Attack Success Rate: 6.61%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 616
+Attack Success Rate: 9.54%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 643
+Attack Success Rate: 5.58%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 627
+Attack Success Rate: 7.93%
+
+
+Average ASR for 2 dots: 0.07635829662261381
+------------------------------------------------------------
+Num Dots: 3
+------------------------------------------------------------
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 613
+Attack Success Rate: 9.99%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 602
+Attack Success Rate: 11.60%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 609
+Attack Success Rate: 10.57%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 609
+Attack Success Rate: 10.57%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 611
+Attack Success Rate: 10.28%
+
+
+Average ASR for 3 dots: 0.10602055800293686
+------------------------------------------------------------
+Num Dots: 4
+------------------------------------------------------------
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 584
+Attack Success Rate: 14.24%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 583
+Attack Success Rate: 14.39%
+
+Total pedestrians detected previously: 681
+Total pedestrians detected now : 586
+Attack Success Rate: 13.95%

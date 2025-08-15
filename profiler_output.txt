@@ -1,0 +1,181 @@
+When code : 
+# Apply Gaussian blur for the entire mask to simulate light scattering
+laser_mask = cv2.GaussianBlur(laser_mask, (0, 0), sigmaX=dot_radius / 3, sigmaY=dot_radius / 3)
+
+# Blend the laser mask with the original image
+overlay = cv2.addWeighted(image, 1, laser_mask, 0.7, 0)
+
+
+All images processed and saved with laser dots.
+Attack success rate: 1.62 %
+Time taken: 105.13 seconds
+         3481594 function calls (3220185 primitive calls) in 105.124 seconds
+
+   Ordered by: internal time
+   List reduced from 3576 to 100 due to restriction <100>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     3000   27.334    0.009   27.334    0.009 {built-in method torch._C._cuda_synchronize}
+     4649   22.550    0.005   22.550    0.005 {GaussianBlur}
+     4649    5.721    0.001    5.721    0.001 {addWeighted}
+    32064    4.305    0.000    4.305    0.000 {built-in method torch.conv2d}
+    11953    3.717    0.000    7.606    0.001 C:\Final Year Project\code\optimization_helper.py:5(calculate_iou)
+      500    3.667    0.007    3.667    0.007 {built-in method numpy.ascontiguousarray}
+     4649    2.688    0.001    2.688    0.001 {resize}
+    51053    2.446    0.000    2.448    0.000 {built-in method builtins.max}
+      500    2.261    0.005    4.728    0.009 C:\Final Year Project\venv\lib\site-packages\ultralytics\utils\ops.py:167(non_max_suppression)
+     4649    2.136    0.000    4.213    0.001 C:\Final Year Project\venv\lib\site-packages\ultralytics\engine\results.py:630(verbose)   
+      207    2.056    0.010    2.056    0.010 {built-in method torch.full}
+     4649    1.888    0.000    1.888    0.000 {built-in method numpy.zeros}
+      500    1.753    0.004    1.762    0.004 C:\Final Year Project\venv\lib\site-packages\numpy\_core\shape_base.py:380(stack)
+       57    1.486    0.026    2.130    0.037 C:\Final Year Project\venv\lib\site-packages\ultralytics\utils\torch_utils.py:238(fuse_conv_and_bn)
+     4649    1.456    0.000    1.456    0.000 {built-in method torch._ops.torchvision.nms}
+       22    1.270    0.058  104.950    4.770 C:\Final Year Project\code\optimization_helper.py:166(dot_optimization)
+
+-----------------------------------------------------------------
+    After GaussianBlur and addWeighted optimization_helper
+------------------------------------------------------------------
+
+
+When code : 
+kernel_size = int(dot_radius / 3)
+kernel_size = max(1, kernel_size | 1)  # Ensure it's an odd number ≥1
+# Apply Gaussian blur on CPU
+laser_mask = cv2.GaussianBlur(laser_mask, (kernel_size, kernel_size), 0)
+# Blend using NumPy
+overlay = image + (laser_mask * 0.7).astype(image.dtype)
+
+Turns out this is even worse, it is prolly the addition operation ig
+
+I ran both the previous and this one multiple time, the result was the same every time
+
+Attack success rate: 1.32 %
+Time taken: 236.44 seconds
+         3711740 function calls (3432378 primitive calls) in 236.436 seconds
+
+   Ordered by: internal time
+   List reduced from 3576 to 100 due to restriction <100>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     5002   94.876    0.019  119.839    0.024 C:\Final Year Project\code\laser_simulation.py:77(add_laser_dot)
+     3228   55.241    0.017   55.241    0.017 {built-in method torch._C._cuda_synchronize}
+     5002   18.992    0.004   18.992    0.004 {method 'astype' of 'numpy.ndarray' objects}
+    34496    6.076    0.000    6.076    0.000 {built-in method torch.conv2d}
+    14703    5.241    0.000   11.019    0.001 C:\Final Year Project\code\optimization_helper.py:5(calculate_iou)
+      237    4.468    0.019    4.468    0.019 {built-in method torch.full}
+      538    4.246    0.008    4.246    0.008 {built-in method numpy.ascontiguousarray}
+     5002    3.778    0.001    3.778    0.001 {GaussianBlur}
+    67207    3.570    0.000    3.572    0.000 {built-in method builtins.max}
+     5002    3.088    0.001    3.088    0.001 {resize}
+      538    2.757    0.005    5.540    0.010 C:\Final Year Project\venv\lib\site-packages\ultralytics\utils\ops.py:167(non_max_suppression)
+     5002    2.537    0.001    4.992    0.001 C:\Final Year Project\venv\lib\site-packages\ultralytics\engine\results.py:630(verbose)   
+      538    2.086    0.004    2.097    0.004 C:\Final Year Project\venv\lib\site-packages\numpy\_core\shape_base.py:380(stack)
+     5002    2.006    0.000    2.006    0.000 {built-in method numpy.zeros}
+     5002    1.636    0.000    1.636    0.000 {built-in method torch._ops.torchvision.nms}
+
+
+--------------------------------------------------------------------
+            With Multithreading in laser dots applying
+--------------------------------------------------------------------
+
+Attack success rate: 1.32 %
+Time taken: 176.21 seconds
+         3931922 function calls (3661068 primitive calls) in 176.209 seconds
+
+   Ordered by: internal time
+   List reduced from 3611 to 100 due to restriction <100>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     3120   62.315    0.020   62.315    0.020 {built-in method torch._C._cuda_synchronize}
+     4840   26.625    0.006   26.625    0.006 {GaussianBlur}
+    35950   15.896    0.000   15.896    0.000 {method 'acquire' of '_thread.lock' objects}
+    33344    6.645    0.000    6.645    0.000 {built-in method torch.conv2d}
+     4840    6.218    0.001    6.218    0.001 {addWeighted}
+    12912    4.826    0.000   10.172    0.001 C:\Final Year Project\code\optimization_helper.py:5(calculate_iou)
+      213    4.701    0.022    4.701    0.022 {built-in method torch.full}
+      520    3.714    0.007    3.714    0.007 {built-in method numpy.ascontiguousarray}
+    54969    3.366    0.000    3.367    0.000 {built-in method builtins.max}
+      520    3.035    0.006    5.971    0.011 C:\Final Year Project\venv\lib\site-packages\ultralytics\utils\ops.py:167(non_max_suppression)
+     4840    2.743    0.001    2.743    0.001 {resize}
+     4840    2.559    0.001    5.019    0.001 C:\Final Year Project\venv\lib\site-packages\ultralytics\engine\results.py:630(verbose)
+       57    2.129    0.037    2.941    0.052 C:\Final Year Project\venv\lib\site-packages\ultralytics\utils\torch_utils.py:238(fuse_conv_and_bn)
+     4840    1.844    0.000    1.844    0.000 {built-in method numpy.zeros}
+      520    1.787    0.003    1.796    0.003 C:\Final Year Project\venv\lib\site-packages\numpy\_core\shape_base.py:380(stack)
+     4840    1.762    0.000    1.762    0.000 {built-in method torch._ops.torchvision.nms}
+       22    1.760    0.080  176.000    8.000 C:\Final Year Project\code\optimization_helper.py:165(dot_optimization)
+     1350    1.444    0.001    1.444    0.001 {method 'to' of 'torch._C.TensorBase' objects}
+    36884    1.303    0.000    1.303    0.000 {built-in method builtins.min}
+
+
+
+
+---------------------------------------------------------------------------
+  When normal laser dot, but iteration limit and more images parallel
+---------------------------------------------------------------------------
+
+Time taken: 145.10 seconds
+         2229483 function calls (2130454 primitive calls) in 145.090 seconds
+         2229483 function calls (2130454 primitive calls) in 145.090 seconds
+
+   Ordered by: internal time
+   List reduced from 3576 to 5 due to restriction <5>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      840   58.123    0.069   58.123    0.069 {built-in method torch._C._cuda_synchronize}
+     3765   30.130    0.008   30.130    0.008 {GaussianBlur}
+       93    6.686    0.072    6.686    0.072 {built-in method torch.full}
+     3765    6.321    0.002    6.321    0.002 {addWeighted}
+      140    4.244    0.030    4.244    0.030 {built-in method numpy.ascontiguousarray}
+
+      Processed bbox '(458.14501953125, 748.0394287109375, 558.9561157226562, 993.4361572265625 , 0.720179)' in 060389.jpg
+      Best configuration: [(488, 839), (468, 778), (488, 778)], Best score: 0.5223628282546997
+      Time taken: 24.39 seconds 
+      
+      Processed bbox '(1023.4022827148438, 503.2352600097656, 1108.966796875, 752.8236083984375 , 0.693330)' in 060389.jpg
+      Best configuration: [(1054, 596), (1076, 658), (1054, 637)], Best score: 0
+      Time taken: 9.98 seconds 
+      
+      Processed bbox '(399.01190185546875, 753.549072265625, 498.80804443359375, 982.87939453125 , 0.620505)' in 060389.jpg
+      Best configuration: [(436, 867), (436, 846), (436, 950)], Best score: 0.26754775643348694
+      Time taken: 27.81 seconds 
+      
+      Processed bbox '(471.5520935058594, 612.8102416992188, 576.4603271484375, 876.4780883789062 , 0.838076)' in 081373.jpg
+      Best configuration: [(565, 683), (523, 642), (481, 723)], Best score: 0.813852071762085
+      Time taken: 39.02 seconds 
+      
+      Processed bbox '(564.3388671875, 601.8118896484375, 662.41748046875, 865.0186767578125 , 0.832080)' in 081373.jpg
+      Best configuration: [(625, 631), (600, 753), (600, 712)], Best score: 0.7902727723121643
+      Time taken: 40.75 seconds 
+      
+      Processed bbox '(1120.147216796875, 519.2671508789062, 1231.750732421875, 721.7108764648438 , 0.650716)' in 081373.jpg
+      Best configuration: [(1197, 630), (1219, 549), (1153, 670)], Best score: 0
+      Time taken: 3.03 seconds 
+      
+
+      
+compared to : 
+
+
+Processed bbox '(458.14501953125, 748.0394287109375, 558.9561157226562, 993.4361572265625 , 0.720179)' in 060389.jpg
+Best configuration: [(508, 860), (488, 778), (488, 839)], Best score: 0.5675066709518433
+Time taken: 11.06 seconds 
+
+Processed bbox '(1023.4022827148438, 503.2352600097656, 1108.966796875, 752.8236083984375 , 0.693330)' in 060389.jpg
+Best configuration: [(1033, 617), (1076, 700), (1076, 596)], Best score: 0
+Time taken: 0.73 seconds 
+
+Processed bbox '(399.01190185546875, 753.549072265625, 498.80804443359375, 982.87939453125 , 0.620505)' in 060389.jpg
+Best configuration: [(460, 909), (436, 846), (485, 846)], Best score: 0.2844177782535553
+Time taken: 5.45 seconds 
+
+Processed bbox '(471.5520935058594, 612.8102416992188, 576.4603271484375, 876.4780883789062 , 0.838076)' in 081373.jpg
+Best configuration: [(544, 784), (523, 642), (544, 662)], Best score: 0.8085650205612183
+Time taken: 5.24 seconds 
+
+Processed bbox '(564.3388671875, 601.8118896484375, 662.41748046875, 865.0186767578125 , 0.832080)' in 081373.jpg
+Best configuration: [(600, 712), (600, 631), (625, 753)], Best score: 0.7899017930030823
+Time taken: 2.70 seconds 
+
+Processed bbox '(1120.147216796875, 519.2671508789062, 1231.750732421875, 721.7108764648438 , 0.650716)' in 081373.jpg
+Best configuration: [(1219, 690), (1197, 569), (1175, 630)], Best score: 0
+Time taken: 0.67 seconds 

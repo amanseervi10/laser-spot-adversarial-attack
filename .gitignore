@@ -1,0 +1,15 @@
+#The datasets
+datasets/
+
+#Research papers 
+papers/
+
+#Virtual Env
+venv/
+
+#The models
+yolov8m.pt
+yolov8n.pt
+yolov8s.pt
+
+code/__pycache__/
