@@ -205,8 +205,8 @@ Where $B_p$ is the target pedestrian bounding box.
 
 ```bash
 # Clone repo
-git clone https://github.com/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/https://github.com/amanseervi10/laser-spot-adversarial-attack/.git
+cd laser-spot-adversarial-attack
 
 # Install YOLOv8 and dependencies
 pip install ultralytics  # Installs YOLOv8 + torch, cv2, numpy, matplotlib
