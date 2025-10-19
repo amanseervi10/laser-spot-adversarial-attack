@@ -205,7 +205,7 @@ Where $B_p$ is the target pedestrian bounding box.
 
 ```bash
 # Clone repo
-git clone https://github.com/https://github.com/amanseervi10/laser-spot-adversarial-attack/.git
+git clone https://github.com/amanseervi10/laser-spot-adversarial-attack.git
 cd laser-spot-adversarial-attack
 
 # Install YOLOv8 and dependencies
